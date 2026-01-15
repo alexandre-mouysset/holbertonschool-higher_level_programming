@@ -2,8 +2,8 @@
 def uppercase(str):
     total = ""
     for i in str:
-        if 97 <= ord(str) <= 122:
+        if 97 <= ord(i) <= 122:
             total = total + chr(ord(str) - 32)
         else:
-            total = total + str
+            total = total + i
     print("{}".format(total))
