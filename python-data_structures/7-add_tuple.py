@@ -20,4 +20,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
         second_b = tuple_b[1]
     result_first = first_a + first_b
     result_second = second_a + second_b
-    return (result_first + result_second)
+    return (result_first, result_second)
