@@ -22,7 +22,7 @@ def text_indentation(text):
     for i in text:
         line = line + i
         if i == "." or i == "?" or i == ":":
-            print(line)
+            print(line, end="")
             print()
             line = ""
     if line:
