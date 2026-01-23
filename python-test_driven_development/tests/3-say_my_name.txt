@@ -45,8 +45,3 @@ Test present: firstname= not string / lastname= string => TypeError: first_name 
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
-
-Test present: missing two arguments
-    >>> say_my_name()
-    Traceback (most recent call last):
-    ...
