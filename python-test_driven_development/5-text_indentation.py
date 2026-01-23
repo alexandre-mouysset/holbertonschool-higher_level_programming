@@ -20,10 +20,11 @@ def text_indentation(text):
     line = ""
 
     for i in text:
-        line = line + i
+        line += i
         if i == "." or i == "?" or i == ":":
-            print(line, end="")
+            print(line)
             print()
             line = ""
+
     if line:
         print(line, end="")
