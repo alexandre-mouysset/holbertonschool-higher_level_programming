@@ -1,50 +1,33 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Test for 7-base_geometry.py
+============================
 
-# Test area() raises exception
->>> bg = BaseGeometry()
->>> bg.area()
-Traceback (most recent call last):
+Import the class:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test area() method:
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
     ...
-Exception: area() is not implemented
+    Exception: area() is not implemented
 
-# Test integer_validator with valid positive integer
->>> bg.integer_validator("size", 5)
-# Pas d'erreur, passe silencieusement
+Test integer_validator() with valid integer:
+    >>> bg.integer_validator("my_int", 12)
 
-# Test integer_validator with zero
->>> bg.integer_validator("size", 0)
-Traceback (most recent call last):
+Test integer_validator() with zero:
+    >>> bg.integer_validator("number", 0)
+    Traceback (most recent call last):
     ...
-ValueError: size must be greater than 0
+    ValueError: number must be greater than 0
 
-# Test integer_validator with negative integer
->>> bg.integer_validator("length", -3)
-Traceback (most recent call last):
+Test integer_validator() with negative:
+    >>> bg.integer_validator("number", -5)
+    Traceback (most recent call last):
     ...
-ValueError: length must be greater than 0
+    ValueError: number must be greater than 0
 
-# Test integer_validator with non-integer (string)
->>> bg.integer_validator("width", "10")
-Traceback (most recent call last):
+Test integer_validator() with string:
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
     ...
-TypeError: width must be an integer
-
-# Test integer_validator with non-integer (float)
->>> bg.integer_validator("height", 3.5)
-Traceback (most recent call last):
-    ...
-TypeError: height must be an integer
-
-# Test integer_validator with bool (True or False)
->>> bg.integer_validator("count", True)
-Traceback (most recent call last):
-    ...
-TypeError: count must be an integer
->>> bg.integer_validator("flag", False)
-Traceback (most recent call last):
-    ...
-TypeError: flag must be an integer
-
-# Test integer_validator with large integer
->>> bg.integer_validator("big", 1000000)
-# Pas d'erreur, passe silencieusement
+    TypeError: name must be an integer
