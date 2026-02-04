@@ -34,3 +34,29 @@
 # Test that original list is not modified
 >>> my_list
 [5, 2, 8, 1, 9]
+
+# Test with negative integers
+>>> my_list = MyList()
+>>> my_list.append(-2)
+>>> my_list.append(0)
+>>> my_list.append(-5)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[-5, -2, 0, 3]
+
+# Test with duplicates
+>>> my_list = MyList()
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1, 2, 2, 3]
+
+# Test with large numbers
+>>> my_list = MyList()
+>>> my_list.append(1000)
+>>> my_list.append(500)
+>>> my_list.append(1500)
+>>> my_list.print_sorted()
+[500, 1000, 1500]
