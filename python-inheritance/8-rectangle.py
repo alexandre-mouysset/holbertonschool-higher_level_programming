@@ -1,46 +1,27 @@
 #!/usr/bin/python3
-"""BaseGeometry class module."""
+"""Module that defines BaseGeometry and Rectangle classes."""
 
 
 class BaseGeometry:
-    """A BaseGeometry class with area method."""
+    """Base class for geometry with validation."""
 
     def area(self):
-        """Raise an exception indicating area is not implemented."""
+        """Raises an Exception indicating area() is not implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validate that value is a positive integer.
-
-        Args:
-            name: The name of the parameter (for error messages).
-            value: The value to validate.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is not greater than 0.
-        """
-        if not isinstance(value, int) or type(value) is bool:
+        """Validates that value is a positive integer."""
+        if not type(value) is int:
             raise TypeError("{} must be an integer".format(name))
-
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
-    """A Rectangle class that inherits from BaseGeometry."""
+    """Rectangle class that inherits from BaseGeometry."""
 
     def __init__(self, width, height):
-        """Initialize a Rectangle with width and height.
-
-        Args:
-            width: The width of the rectangle (must be a positive integer).
-            height: The height of the rectangle (must be a positive integer).
-
-        Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is not greater than 0.
-        """
+        """Initializes a rectangle with validated width and height."""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
