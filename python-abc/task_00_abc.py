@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-"""Module defining an animal class hierarchy using ABC."""
+"""Module that defines an abstract Animal class and its subclasses.
+
+This module provides an abstract Animal class using ABC
+with concrete implementations for Dog and Cat.
+"""
 from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
-    """Abstract class representing a generic animal."""
+    """An abstract animal class.
+
+    This class represents a generic animal with an abstract method
+    that must be implemented by all subclasses.
+    """
     @abstractmethod
     def sound(self) -> str:
         """Abstract method returning the animal's sound.
@@ -16,7 +24,10 @@ class Animal(ABC):
 
 
 class Dog(Animal):
-    """Class representing a dog."""
+    """A dog class that inherits Animal.
+
+    This class represents a dog with its specific sound.
+    """
     def sound(self) -> str:
         """Returns the dog's sound.
 
@@ -27,7 +38,10 @@ class Dog(Animal):
 
 
 class Cat(Animal):
-    """Class representing a cat."""
+    """A cat class that inherits Animal.
+
+    This class represents a cat with its specific sound.
+    """
     def sound(self) -> str:
         """Returns the cat's sound.
 
