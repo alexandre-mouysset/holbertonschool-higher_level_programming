@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Module defining an animal class hierarchy using ABC."""
 from abc import ABC, abstractmethod
 
