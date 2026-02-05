@@ -35,4 +35,4 @@ class CountedIterator:
             StopIteration: When there are no more items to iterate.
         """
         self.counter += 1
-        return (self.iterator)
+        return next(self.iterator)
