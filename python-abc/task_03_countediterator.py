@@ -1,38 +1,40 @@
 #!/usr/bin/python3
 
-
 class CountedIterator:
-    """An iterator wrapper that keeps track of the number of items iterated.
+    """Iterator wrapper that counts the number of items returned.
 
-    This class takes an iterable object and provides an iterator interface
-    while counting how many items have been iterated through.
+    This class wraps any iterable object and provides an iterator interface,
+    keeping track of how many items have been iterated so far.
     """
 
     def __init__(self, iterator):
-        """Initialize the CountedIterator.
+        """Initialize the CountedIterator with an iterable and a counter.
 
         Args:
-            iterator: An iterable object to wrap.
+            iterator: Any iterable object (like a list, tuple) to wrap.
         """
         self.iterator = iter(iterator)
         self.counter = 0
 
     def get_count(self):
-        """Get the current count of iterated items.
+        """Return the number of items that have been iterated so far.
 
         Returns:
-            int: The number of items that have been iterated through.
+            int: Total number of elements returned by the iterator.
         """
         return self.counter
 
     def __next__(self):
-        """Get the next item from the iterator and increment the counter.
+        """Return the next item from the iterator and increment the counter.
+
+        Each call to this method increases the internal counter by 1.
+        If the iterator is exhausted, StopIteration is raised.
 
         Returns:
-            The next item from the iterator.
+            The next element from the wrapped iterator.
 
         Raises:
-            StopIteration: When there are no more items to iterate.
+            StopIteration: If there are no more elements to return.
         """
         self.counter += 1
         return next(self.iterator)
