@@ -30,9 +30,9 @@ class CountedIterator:
 
         Returns:
             The next item from the iterator.
-=
+
         Raises:
             StopIteration: When there are no more items to iterate.
         """
         self.counter += 1
-        return next(self.iterator)
+        return (self.iterator)
