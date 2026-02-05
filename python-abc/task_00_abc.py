@@ -32,9 +32,9 @@ class Dog(Animal):
         """Returns the dog's sound.
 
         Returns:
-            str: The sound 'bark'.
+            str: The sound 'Bark'.
         """
-        return "bark"
+        return "Bark"
 
 
 class Cat(Animal):
