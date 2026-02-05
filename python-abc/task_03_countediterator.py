@@ -36,5 +36,6 @@ class CountedIterator:
         Raises:
             StopIteration: If there are no more elements to return.
         """
+        item = next(self._iterator)
         self._counter += 1
-        return next(self._iterator)
+        return item
