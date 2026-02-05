@@ -40,6 +40,10 @@ class VerboseList(list):
 
         Args:
             index: The index of the item to pop (default: -1, last item).
+
+        Returns:
+            The item removed from the list.
         """
-        print(f"Popped [{index}] from the list.")
-        super().pop(index)
+        item = self[index]
+        print(f"Popped [{item}] from the list.")
+        return super().pop(index)
