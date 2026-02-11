@@ -22,30 +22,25 @@ class Student:
         self.last_name = last_name
         self.age = age
 
+    def to_json(self, attrs=None):
+        """
+        Return the dictionary representation of student with selective attribut
 
-def to_json(self, attrs=None):
-    """
-    Returns the dictionary representation of a student with selective attribute
+        Args:
+            attrs: Optional list of attribute names to include in the output
+                          If valid, only these attributes are returned.
 
-    Args:
-        self: The student instance
-        attrs (list): Optional list of attribute names to include in the output
-                     If valid, only these attributes are returned.
-
-    Returns:
-        dict: Dictionary containing the specified student attributes,
-              or all attributes if attrs is not a valid list of strings
-    """
-
-    if isinstance(attrs, list) and all(
-            isinstance(item, str) for item in attrs):
-
-        obj_dict = vars(self)
-        sorted_dict = {}
-        for key in attrs:
-            if key in obj_dict:
-                sorted_dict[key] = obj_dict[key]
-        return sorted_dict
-
-    else:
-        return vars(self)
+        Returns:
+            dict: Dictionary containing the specified student attributes,
+                  or all attributes if attrs is not a valid list of strings
+        """
+        if isinstance(attrs, list) and all(
+           isinstance(item, str) for item in attrs):
+            obj_dict = vars(self)
+            filtered_dict = {}
+            for key in attrs:
+                if key in obj_dict:
+                    filtered_dict[key] = obj_dict[key]
+            return filtered_dict
+        else:
+            return vars(self)
