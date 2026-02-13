@@ -2,7 +2,7 @@
 import pickle
 
 
-class CustomObjet:
+class CustomObject:
     """Serializable object with name, age, and student status."""
     def __init__(self, name, age, is_student):
         """Initialize object attributes."""
