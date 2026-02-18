@@ -17,7 +17,6 @@ def fetch_and_save_posts():
 
     page_response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
-    print(f"Status Code: {page_response.status_code}")
     if page_response.status_code == 200:
         data = page_response.json()
 
