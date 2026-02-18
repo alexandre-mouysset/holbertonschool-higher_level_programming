@@ -1,2 +1,4 @@
 python-classes/test.py
 python-more_classes/test.py
+.venv
+__pycache__
