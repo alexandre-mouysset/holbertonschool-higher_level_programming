@@ -1,5 +1,5 @@
--- script that list all the cities contained in the database
+-- List all cities with their state name using one SELECT
 SELECT cities.id, cities.name, states.name
 FROM cities
-INNER JOIN states ON cities.state_id = states_id
-ORDER BY state.id;
+INNER JOIN states ON cities.state_id = states.id
+ORDER BY cities.id ASC;
