@@ -13,7 +13,8 @@ if __name__ == "__main__":
         host="localhost",
         port=3306,
         user=username,
-        passwd=password, db=database
+        password=password,
+        db=database
         )
 
     cursor = db.cursor()
