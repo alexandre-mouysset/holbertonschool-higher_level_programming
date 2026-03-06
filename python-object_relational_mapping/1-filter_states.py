@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""Lists states with a name starting with 'N' from the database"""
 import MySQLdb
 import sys
 
 
 def main():
+    """Define the main function"""
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
