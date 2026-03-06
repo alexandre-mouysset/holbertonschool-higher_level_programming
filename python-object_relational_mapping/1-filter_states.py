@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""Lists states with a name starting with 'N' from the database"""
+"""List all states from the database."""
+
 import MySQLdb
 import sys
 
 
 def main():
-    """Define the main function"""
+    """Run the SQL query and print results."""
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
     db = MySQLdb.connect(
-        host='localhost',
+        host="localhost",
         port=3306,
         user=username,
         passwd=password,
@@ -19,10 +20,12 @@ def main():
     )
 
     cursor = db.cursor()
-    # use BINARY for case-sensitive LIKE and ensure spacing before ORDER
-    cursor.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-        )
+
+    cursor.execute("""
+        SELECT * FROM states
+        WHERE name LIKE BINARY 'N%'
+        ORDER BY id ASC;
+        """)
 
     states = cursor.fetchall()
 
