@@ -7,14 +7,14 @@ import sys
 
 def main():
     """Run the SQL query and print results."""
-    username = sys.argv[1]
+    user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=username,
+        user=user,
         passwd=password,
         db=database
     )
