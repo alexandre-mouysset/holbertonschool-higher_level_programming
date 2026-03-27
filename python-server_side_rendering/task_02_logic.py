@@ -20,11 +20,11 @@ def contact():
 
 
 @app.route('/items')
-def items_page():
-    with open('items.json') as file:
-        data = json.load(file)
-        items_list = data['items']
-    return render_template('items.html', items=items_list)
+def itemps():
+    with open('items.json', 'r', encoding='utf-8') as fichier:
+        donnees = json.load(fichier)
+        items = donnees["items"]
+        return render_template('items.html', items=items)
 
 
 if __name__ == '__main__':
